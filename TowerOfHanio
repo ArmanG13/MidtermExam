@@ -1,0 +1,19 @@
+ class TowerOfHanoi{
+ fun main() {
+        val n = 7 // number of disks will work for n disks
+        val source = 'A'
+        val aux = 'B'
+        val dest = 'C'
+        solveHanoi(n, source, aux, dest)
+    }
+
+    fun solveHanoi(n: Int, source: Char, aux: Char, dest: Char) {
+        if (n == 1) {
+            println("Move disk 1 from $source to $dest")
+        } else {
+            solveHanoi(n - 1, source, dest, aux)
+            println("Move disk $n from $source to $dest")
+            solveHanoi(n - 1, aux, source, dest)
+        }
+    }
+}
